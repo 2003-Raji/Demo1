@@ -13,3 +13,15 @@ pipeline {
         '''
       }
     }
+    stage('backend image build and push') { 
+      steps {
+        sh'''
+           ls
+           cd server
+           docker build -t backendsampleapp:1 .
+           docker run -d -p 5000:5000 backendsampleapp:1
+        ''' 
+      }
+    }
+  }
+}
