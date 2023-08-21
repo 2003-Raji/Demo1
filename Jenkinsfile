@@ -8,8 +8,8 @@ pipeline {
              systemctl status docker
             docker rm -f $(docker images -a -q)
             docker rm -f $(docker ps -a -q)       
-            docker build -t sampleapp1:1 .
-            docker run -d -p 3000:3000 sampleapp1:1
+            docker build -t sampleapp:1 .
+            docker run -d -p 3000:3000 sampleapp:1
         '''
       }
     }
@@ -18,8 +18,8 @@ pipeline {
         sh'''
            ls
            cd server
-           docker build -t backendsampleapp1:1 .
-           docker run -d -p 5000:5000 backendsampleapp1:1
+           docker build -t backendsampleapp:1 .
+           docker run -d -p 5000:5000 backendsampleapp:1
         ''' 
       }
     }
