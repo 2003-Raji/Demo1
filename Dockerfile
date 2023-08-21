@@ -2,7 +2,7 @@ FROM node:20-alpline
 
 WORKDIR '/app'
 
-COPY..
+COPY . .
 RUN npm install
 EXPOSE 3000
 
